@@ -31,4 +31,3 @@
   console.log(new Date());
   console.log(multiply(add(6, 2), 1));
 })();
-
