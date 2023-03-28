@@ -13,4 +13,23 @@ describe('Page view', () => {
 
     expect(document.querySelectorAll('p').length).toBe(2);
   });
+
+  it('displays the new paragraph', () => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+    const view = new View();
+
+    view.addParagraph('Testing new paragraph');
+
+    expect(document.querySelectorAll('p').length).toBe(3);
+
+  })
+
+  it('removes all paragraphs', () => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+    const view = new View();
+
+    view.clearParagraphs();
+
+    expect(document.querySelectorAll('p').length).toBe(0);
+  })
 });
