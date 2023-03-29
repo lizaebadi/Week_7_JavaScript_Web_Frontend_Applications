@@ -16,4 +16,18 @@ describe('MessageView', () => {
 
     expect(document.querySelector('#message')).not.toBeNull();
   });
+
+  it('hides the message', () => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+
+    const view = new MessageView();
+
+    const buttonEl = document.querySelector('#show-message-button');
+    buttonEl.click();
+
+    const hideButtonEl = document.querySelector('#hide-message-button');
+    hideButtonEl.click();
+
+    expect(document.querySelector('#message')).toBeNull();
+  });
 });
