@@ -18,5 +18,19 @@ describe('notes view', () => {
 
     expect(document.querySelectorAll('div.note').length).toEqual(2);
   });
+
+  it('clicks the button and displays user input', () => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+
+    const model = new NotesModel();
+    const view = new NotesView(model);
+
+    const inputEl = document.querySelector('#message-input');
+    inputEl.value = 'Testing note';
+    const buttonEl = document.querySelector('#add-note-button');
+    buttonEl.click();
+    
+    expect(document.querySelector('div.note').innerText).toEqual('Testing note');
+  });
 });
 
