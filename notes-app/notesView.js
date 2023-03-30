@@ -14,6 +14,7 @@ class NotesView {
 
   displayNotes() {
     const allNotes = this.model.getNotes();
+
     allNotes.forEach(note => {
       const newDiv = document.createElement('div');
       newDiv.className = 'note';
