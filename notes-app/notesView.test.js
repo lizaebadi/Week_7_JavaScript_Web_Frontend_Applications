@@ -30,7 +30,7 @@ describe('notes view', () => {
     const buttonEl = document.querySelector('#add-note-button');
     buttonEl.click();
     
-    expect(document.querySelector('div.note').innerText).toEqual('Testing note');
+    expect(document.querySelectorAll('div.note')[0].textContent).toEqual('Testing note');
   });
 
   it('displays correct number of notes by clearing all previous notes', () => {

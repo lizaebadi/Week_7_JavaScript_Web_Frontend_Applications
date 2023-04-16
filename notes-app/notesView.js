@@ -19,7 +19,7 @@ class NotesView {
     allNotes.forEach(note => {
       const newDiv = document.createElement('div');
       newDiv.className = 'note';
-      newDiv.innerText = note; 
+      newDiv.textContent = note; 
       this.mainContainerEl.append(newDiv);
     });
   };
