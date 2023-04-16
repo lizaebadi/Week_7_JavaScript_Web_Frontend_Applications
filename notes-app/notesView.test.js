@@ -32,5 +32,19 @@ describe('notes view', () => {
     
     expect(document.querySelector('div.note').innerText).toEqual('Testing note');
   });
+
+  it('displays correct number of notes by clearing all previous notes', () => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+
+    const model = new NotesModel();
+    const view = new NotesView(model);
+
+    model.addNote('First note');
+    view.displayNotes();
+    model.addNote('Second note');
+    view.displayNotes();
+
+    expect(document.querySelectorAll('div.note').length).toEqual(2);
+  })
 });
 
