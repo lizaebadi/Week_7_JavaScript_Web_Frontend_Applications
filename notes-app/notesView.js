@@ -13,6 +13,7 @@ class NotesView {
   };
 
   displayNotes() {
+    this.mainContainerEl.innerHTML = "";
     const allNotes = this.model.getNotes();
 
     allNotes.forEach(note => {
